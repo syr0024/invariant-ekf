@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/syr/github/EKF/invariant-ekf/lib/libinekf.so"
+			"path" : "/home/syr/github/EKF/invariant-ekf/bin/propagation_speed"
 		}
 	],
 	"backtrace" : 1,
@@ -10,8 +10,9 @@
 	{
 		"commands" : 
 		[
-			"add_library",
+			"add_executable",
 			"link_directories",
+			"target_link_libraries",
 			"include_directories"
 		],
 		"files" : 
@@ -26,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 70,
+				"line" : 57,
 				"parent" : 0
 			},
 			{
@@ -38,11 +39,17 @@
 			{
 				"command" : 2,
 				"file" : 0,
+				"line" : 65,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
 				"line" : 30,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 42,
 				"parent" : 0
@@ -55,23 +62,28 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g -fPIC -fdiagnostics-color=always"
+					"fragment" : " -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g -fdiagnostics-color=always"
 				}
 			],
 			"defines" : 
 			[
 				{
-					"define" : "inekf_EXPORTS"
+					"backtrace" : 3,
+					"define" : "BOOST_ALL_NO_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "BOOST_SYSTEM_DYN_LINK"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 3,
+					"backtrace" : 4,
 					"path" : "/home/syr/github/EKF/invariant-ekf/include"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 5,
 					"path" : "/usr/include/eigen3"
 				}
 			],
@@ -82,29 +94,44 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5,
+				6
 			]
 		}
 	],
-	"id" : "inekf::@6890427a1f51a3e7e1df",
+	"id" : "propagation_speed::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "",
+				"fragment" : "-std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-rdynamic",
 				"role" : "flags"
 			},
 			{
 				"backtrace" : 2,
 				"fragment" : "-L/home/syr/github/EKF/invariant-ekf/usr/lib/x86_64-linux-gnu",
 				"role" : "libraryPath"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/home/syr/github/EKF/invariant-ekf/usr/lib/x86_64-linux-gnu",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "inekf",
-	"nameOnDisk" : "libinekf.so",
+	"name" : "propagation_speed",
+	"nameOnDisk" : "propagation_speed",
 	"paths" : 
 	{
 		"build" : ".",
@@ -120,7 +147,9 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5,
+				6
 			]
 		}
 	],
@@ -129,13 +158,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/InEKF.cpp",
+			"path" : "src/tests/propagation_speed.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/RobotState.cpp",
+			"path" : "src/InEKF.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -155,7 +184,19 @@
 			"compileGroupIndex" : 0,
 			"path" : "src/Observations.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/RobotState.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/mahony_filter.cpp",
+			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "SHARED_LIBRARY"
+	"type" : "EXECUTABLE"
 }

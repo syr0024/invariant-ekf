@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/syr/github/EKF/invariant-ekf/bin/propagation_speed"
+			"path" : "/home/syr/github/EKF/invariant-ekf/bin/kinematics"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 57,
+				"line" : 56,
 				"parent" : 0
 			},
 			{
@@ -95,11 +95,12 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6
 			]
 		}
 	],
-	"id" : "propagation_speed::@6890427a1f51a3e7e1df",
+	"id" : "kinematics::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -129,8 +130,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "propagation_speed",
-	"nameOnDisk" : "propagation_speed",
+	"name" : "kinematics",
+	"nameOnDisk" : "kinematics",
 	"paths" : 
 	{
 		"build" : ".",
@@ -147,7 +148,8 @@
 				2,
 				3,
 				4,
-				5
+				5,
+				6
 			]
 		}
 	],
@@ -156,7 +158,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/tests/propagation_speed.cpp",
+			"path" : "src/examples/kinematics.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -187,6 +189,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/RobotState.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/mahony_filter.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

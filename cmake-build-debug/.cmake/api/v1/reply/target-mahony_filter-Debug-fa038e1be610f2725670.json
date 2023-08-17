@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/syr/github/EKF/invariant-ekf/bin/large_state_speed"
+			"path" : "/home/syr/github/EKF/invariant-ekf/bin/mahony_filter"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 59,
+				"line" : 61,
 				"parent" : 0
 			},
 			{
@@ -39,7 +39,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 66,
+				"line" : 69,
 				"parent" : 0
 			},
 			{
@@ -90,16 +90,11 @@
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2,
-				3,
-				4,
-				5
+				0
 			]
 		}
 	],
-	"id" : "large_state_speed::@6890427a1f51a3e7e1df",
+	"id" : "mahony_filter::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -129,8 +124,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "large_state_speed",
-	"nameOnDisk" : "large_state_speed",
+	"name" : "mahony_filter",
+	"nameOnDisk" : "mahony_filter",
 	"paths" : 
 	{
 		"build" : ".",
@@ -142,12 +137,7 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0,
-				1,
-				2,
-				3,
-				4,
-				5
+				0
 			]
 		}
 	],
@@ -156,37 +146,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/tests/large_state_speed.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/InEKF.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/LieGroup.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/NoiseParams.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/Observations.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/RobotState.cpp",
+			"path" : "src/mahony_filter.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
