@@ -175,9 +175,13 @@ const Eigen::MatrixXd RobotState::Xinv() const {
 
 ostream& operator<<(ostream& os, const RobotState& s) {  
     os << "--------- Robot State -------------" << endl;
+    os << "State type ..." << s.state_type_ << endl;
+    os << "State type World ..." << StateType::WorldCentric << endl;
     os << "X:\n" << s.X_ << endl << endl;
+    os << "Xdim ... " << s.X_.cols() << endl;
     os << "Theta:\n" << s.Theta_ << endl << endl;
     // os << "P:\n" << s.P_ << endl;
+    os << "Pdim ... " << s.P_.cols() << endl;
     os << "-----------------------------------";
     return os;  
 } 

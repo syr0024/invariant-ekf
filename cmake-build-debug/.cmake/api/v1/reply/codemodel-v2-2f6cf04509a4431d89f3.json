@@ -1,0 +1,114 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.3"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "inekf",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "correction_speed::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-correction_speed-Debug-b55fc47131b4b896de87.json",
+					"name" : "correction_speed",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "inekf::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-inekf-Debug-90abcd67443423141803.json",
+					"name" : "inekf",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kinematics::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kinematics-Debug-477895d532358298f791.json",
+					"name" : "kinematics",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmarks::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmarks-Debug-c0b84d53ced3757ccb6c.json",
+					"name" : "landmarks",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "large_state_speed::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-large_state_speed-Debug-581f3a80b374aedb4432.json",
+					"name" : "large_state_speed",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "left_vs_right_error_dynamics::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-left_vs_right_error_dynamics-Debug-dbcfc4b0fec8de978d6b.json",
+					"name" : "left_vs_right_error_dynamics",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "propagation_speed::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-propagation_speed-Debug-2a7b5dbba1d2681ac9bc.json",
+					"name" : "propagation_speed",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/syr/github/EKF/invariant-ekf/cmake-build-debug",
+		"source" : "/home/syr/github/EKF/invariant-ekf"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
