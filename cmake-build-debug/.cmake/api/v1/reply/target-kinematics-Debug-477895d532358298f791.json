@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/syr/github/EKF/invariant-ekf/bin/landmarks"
+			"path" : "/home/syr/github/EKF/invariant-ekf/bin/kinematics"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 55,
+				"line" : 56,
 				"parent" : 0
 			},
 			{
@@ -95,12 +95,11 @@
 				2,
 				3,
 				4,
-				5,
-				6
+				5
 			]
 		}
 	],
-	"id" : "landmarks::@6890427a1f51a3e7e1df",
+	"id" : "kinematics::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -130,8 +129,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "landmarks",
-	"nameOnDisk" : "landmarks",
+	"name" : "kinematics",
+	"nameOnDisk" : "kinematics",
 	"paths" : 
 	{
 		"build" : ".",
@@ -148,8 +147,7 @@
 				2,
 				3,
 				4,
-				5,
-				6
+				5
 			]
 		}
 	],
@@ -158,7 +156,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/examples/landmarks.cpp",
+			"path" : "src/examples/kinematics.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -189,12 +187,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/RobotState.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/mahony_filter.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

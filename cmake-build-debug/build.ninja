@@ -97,14 +97,6 @@ build CMakeFiles/landmarks.dir/src/RobotState.cpp.o: CXX_COMPILER__landmarks_Deb
   OBJECT_DIR = CMakeFiles/landmarks.dir
   OBJECT_FILE_DIR = CMakeFiles/landmarks.dir/src
 
-build CMakeFiles/landmarks.dir/src/mahony_filter.cpp.o: CXX_COMPILER__landmarks_Debug /home/syr/github/EKF/invariant-ekf/src/mahony_filter.cpp || cmake_object_order_depends_target_landmarks
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
-  DEP_FILE = CMakeFiles/landmarks.dir/src/mahony_filter.cpp.o.d
-  FLAGS = -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g -fdiagnostics-color=always
-  INCLUDES = -I/home/syr/github/EKF/invariant-ekf/include -I/usr/include/eigen3
-  OBJECT_DIR = CMakeFiles/landmarks.dir
-  OBJECT_FILE_DIR = CMakeFiles/landmarks.dir/src
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target landmarks
@@ -113,7 +105,7 @@ build CMakeFiles/landmarks.dir/src/mahony_filter.cpp.o: CXX_COMPILER__landmarks_
 #############################################
 # Link the executable /home/syr/github/EKF/invariant-ekf/bin/landmarks
 
-build /home/syr/github/EKF/invariant-ekf/bin/landmarks: CXX_EXECUTABLE_LINKER__landmarks_Debug CMakeFiles/landmarks.dir/src/examples/landmarks.cpp.o CMakeFiles/landmarks.dir/src/InEKF.cpp.o CMakeFiles/landmarks.dir/src/LieGroup.cpp.o CMakeFiles/landmarks.dir/src/NoiseParams.cpp.o CMakeFiles/landmarks.dir/src/Observations.cpp.o CMakeFiles/landmarks.dir/src/RobotState.cpp.o CMakeFiles/landmarks.dir/src/mahony_filter.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+build /home/syr/github/EKF/invariant-ekf/bin/landmarks: CXX_EXECUTABLE_LINKER__landmarks_Debug CMakeFiles/landmarks.dir/src/examples/landmarks.cpp.o CMakeFiles/landmarks.dir/src/InEKF.cpp.o CMakeFiles/landmarks.dir/src/LieGroup.cpp.o CMakeFiles/landmarks.dir/src/NoiseParams.cpp.o CMakeFiles/landmarks.dir/src/Observations.cpp.o CMakeFiles/landmarks.dir/src/RobotState.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
   FLAGS = -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g
   LINK_FLAGS = -rdynamic
   LINK_LIBRARIES = -Wl,-rpath,/home/syr/github/EKF/invariant-ekf/usr/lib/x86_64-linux-gnu  /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
@@ -181,14 +173,6 @@ build CMakeFiles/kinematics.dir/src/RobotState.cpp.o: CXX_COMPILER__kinematics_D
   OBJECT_DIR = CMakeFiles/kinematics.dir
   OBJECT_FILE_DIR = CMakeFiles/kinematics.dir/src
 
-build CMakeFiles/kinematics.dir/src/mahony_filter.cpp.o: CXX_COMPILER__kinematics_Debug /home/syr/github/EKF/invariant-ekf/src/mahony_filter.cpp || cmake_object_order_depends_target_kinematics
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
-  DEP_FILE = CMakeFiles/kinematics.dir/src/mahony_filter.cpp.o.d
-  FLAGS = -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g -fdiagnostics-color=always
-  INCLUDES = -I/home/syr/github/EKF/invariant-ekf/include -I/usr/include/eigen3
-  OBJECT_DIR = CMakeFiles/kinematics.dir
-  OBJECT_FILE_DIR = CMakeFiles/kinematics.dir/src
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target kinematics
@@ -197,7 +181,7 @@ build CMakeFiles/kinematics.dir/src/mahony_filter.cpp.o: CXX_COMPILER__kinematic
 #############################################
 # Link the executable /home/syr/github/EKF/invariant-ekf/bin/kinematics
 
-build /home/syr/github/EKF/invariant-ekf/bin/kinematics: CXX_EXECUTABLE_LINKER__kinematics_Debug CMakeFiles/kinematics.dir/src/examples/kinematics.cpp.o CMakeFiles/kinematics.dir/src/InEKF.cpp.o CMakeFiles/kinematics.dir/src/LieGroup.cpp.o CMakeFiles/kinematics.dir/src/NoiseParams.cpp.o CMakeFiles/kinematics.dir/src/Observations.cpp.o CMakeFiles/kinematics.dir/src/RobotState.cpp.o CMakeFiles/kinematics.dir/src/mahony_filter.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+build /home/syr/github/EKF/invariant-ekf/bin/kinematics: CXX_EXECUTABLE_LINKER__kinematics_Debug CMakeFiles/kinematics.dir/src/examples/kinematics.cpp.o CMakeFiles/kinematics.dir/src/InEKF.cpp.o CMakeFiles/kinematics.dir/src/LieGroup.cpp.o CMakeFiles/kinematics.dir/src/NoiseParams.cpp.o CMakeFiles/kinematics.dir/src/Observations.cpp.o CMakeFiles/kinematics.dir/src/RobotState.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
   FLAGS = -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g
   LINK_FLAGS = -rdynamic
   LINK_LIBRARIES = -Wl,-rpath,/home/syr/github/EKF/invariant-ekf/usr/lib/x86_64-linux-gnu  /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
@@ -265,14 +249,6 @@ build CMakeFiles/propagation_speed.dir/src/RobotState.cpp.o: CXX_COMPILER__propa
   OBJECT_DIR = CMakeFiles/propagation_speed.dir
   OBJECT_FILE_DIR = CMakeFiles/propagation_speed.dir/src
 
-build CMakeFiles/propagation_speed.dir/src/mahony_filter.cpp.o: CXX_COMPILER__propagation_speed_Debug /home/syr/github/EKF/invariant-ekf/src/mahony_filter.cpp || cmake_object_order_depends_target_propagation_speed
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
-  DEP_FILE = CMakeFiles/propagation_speed.dir/src/mahony_filter.cpp.o.d
-  FLAGS = -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g -fdiagnostics-color=always
-  INCLUDES = -I/home/syr/github/EKF/invariant-ekf/include -I/usr/include/eigen3
-  OBJECT_DIR = CMakeFiles/propagation_speed.dir
-  OBJECT_FILE_DIR = CMakeFiles/propagation_speed.dir/src
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target propagation_speed
@@ -281,7 +257,7 @@ build CMakeFiles/propagation_speed.dir/src/mahony_filter.cpp.o: CXX_COMPILER__pr
 #############################################
 # Link the executable /home/syr/github/EKF/invariant-ekf/bin/propagation_speed
 
-build /home/syr/github/EKF/invariant-ekf/bin/propagation_speed: CXX_EXECUTABLE_LINKER__propagation_speed_Debug CMakeFiles/propagation_speed.dir/src/tests/propagation_speed.cpp.o CMakeFiles/propagation_speed.dir/src/InEKF.cpp.o CMakeFiles/propagation_speed.dir/src/LieGroup.cpp.o CMakeFiles/propagation_speed.dir/src/NoiseParams.cpp.o CMakeFiles/propagation_speed.dir/src/Observations.cpp.o CMakeFiles/propagation_speed.dir/src/RobotState.cpp.o CMakeFiles/propagation_speed.dir/src/mahony_filter.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+build /home/syr/github/EKF/invariant-ekf/bin/propagation_speed: CXX_EXECUTABLE_LINKER__propagation_speed_Debug CMakeFiles/propagation_speed.dir/src/tests/propagation_speed.cpp.o CMakeFiles/propagation_speed.dir/src/InEKF.cpp.o CMakeFiles/propagation_speed.dir/src/LieGroup.cpp.o CMakeFiles/propagation_speed.dir/src/NoiseParams.cpp.o CMakeFiles/propagation_speed.dir/src/Observations.cpp.o CMakeFiles/propagation_speed.dir/src/RobotState.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
   FLAGS = -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g
   LINK_FLAGS = -rdynamic
   LINK_LIBRARIES = -Wl,-rpath,/home/syr/github/EKF/invariant-ekf/usr/lib/x86_64-linux-gnu  /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
@@ -349,14 +325,6 @@ build CMakeFiles/correction_speed.dir/src/RobotState.cpp.o: CXX_COMPILER__correc
   OBJECT_DIR = CMakeFiles/correction_speed.dir
   OBJECT_FILE_DIR = CMakeFiles/correction_speed.dir/src
 
-build CMakeFiles/correction_speed.dir/src/mahony_filter.cpp.o: CXX_COMPILER__correction_speed_Debug /home/syr/github/EKF/invariant-ekf/src/mahony_filter.cpp || cmake_object_order_depends_target_correction_speed
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
-  DEP_FILE = CMakeFiles/correction_speed.dir/src/mahony_filter.cpp.o.d
-  FLAGS = -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g -fdiagnostics-color=always
-  INCLUDES = -I/home/syr/github/EKF/invariant-ekf/include -I/usr/include/eigen3
-  OBJECT_DIR = CMakeFiles/correction_speed.dir
-  OBJECT_FILE_DIR = CMakeFiles/correction_speed.dir/src
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target correction_speed
@@ -365,7 +333,7 @@ build CMakeFiles/correction_speed.dir/src/mahony_filter.cpp.o: CXX_COMPILER__cor
 #############################################
 # Link the executable /home/syr/github/EKF/invariant-ekf/bin/correction_speed
 
-build /home/syr/github/EKF/invariant-ekf/bin/correction_speed: CXX_EXECUTABLE_LINKER__correction_speed_Debug CMakeFiles/correction_speed.dir/src/tests/correction_speed.cpp.o CMakeFiles/correction_speed.dir/src/InEKF.cpp.o CMakeFiles/correction_speed.dir/src/LieGroup.cpp.o CMakeFiles/correction_speed.dir/src/NoiseParams.cpp.o CMakeFiles/correction_speed.dir/src/Observations.cpp.o CMakeFiles/correction_speed.dir/src/RobotState.cpp.o CMakeFiles/correction_speed.dir/src/mahony_filter.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+build /home/syr/github/EKF/invariant-ekf/bin/correction_speed: CXX_EXECUTABLE_LINKER__correction_speed_Debug CMakeFiles/correction_speed.dir/src/tests/correction_speed.cpp.o CMakeFiles/correction_speed.dir/src/InEKF.cpp.o CMakeFiles/correction_speed.dir/src/LieGroup.cpp.o CMakeFiles/correction_speed.dir/src/NoiseParams.cpp.o CMakeFiles/correction_speed.dir/src/Observations.cpp.o CMakeFiles/correction_speed.dir/src/RobotState.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
   FLAGS = -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g
   LINK_FLAGS = -rdynamic
   LINK_LIBRARIES = -Wl,-rpath,/home/syr/github/EKF/invariant-ekf/usr/lib/x86_64-linux-gnu  /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
@@ -433,14 +401,6 @@ build CMakeFiles/large_state_speed.dir/src/RobotState.cpp.o: CXX_COMPILER__large
   OBJECT_DIR = CMakeFiles/large_state_speed.dir
   OBJECT_FILE_DIR = CMakeFiles/large_state_speed.dir/src
 
-build CMakeFiles/large_state_speed.dir/src/mahony_filter.cpp.o: CXX_COMPILER__large_state_speed_Debug /home/syr/github/EKF/invariant-ekf/src/mahony_filter.cpp || cmake_object_order_depends_target_large_state_speed
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
-  DEP_FILE = CMakeFiles/large_state_speed.dir/src/mahony_filter.cpp.o.d
-  FLAGS = -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g -fdiagnostics-color=always
-  INCLUDES = -I/home/syr/github/EKF/invariant-ekf/include -I/usr/include/eigen3
-  OBJECT_DIR = CMakeFiles/large_state_speed.dir
-  OBJECT_FILE_DIR = CMakeFiles/large_state_speed.dir/src
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target large_state_speed
@@ -449,7 +409,7 @@ build CMakeFiles/large_state_speed.dir/src/mahony_filter.cpp.o: CXX_COMPILER__la
 #############################################
 # Link the executable /home/syr/github/EKF/invariant-ekf/bin/large_state_speed
 
-build /home/syr/github/EKF/invariant-ekf/bin/large_state_speed: CXX_EXECUTABLE_LINKER__large_state_speed_Debug CMakeFiles/large_state_speed.dir/src/tests/large_state_speed.cpp.o CMakeFiles/large_state_speed.dir/src/InEKF.cpp.o CMakeFiles/large_state_speed.dir/src/LieGroup.cpp.o CMakeFiles/large_state_speed.dir/src/NoiseParams.cpp.o CMakeFiles/large_state_speed.dir/src/Observations.cpp.o CMakeFiles/large_state_speed.dir/src/RobotState.cpp.o CMakeFiles/large_state_speed.dir/src/mahony_filter.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+build /home/syr/github/EKF/invariant-ekf/bin/large_state_speed: CXX_EXECUTABLE_LINKER__large_state_speed_Debug CMakeFiles/large_state_speed.dir/src/tests/large_state_speed.cpp.o CMakeFiles/large_state_speed.dir/src/InEKF.cpp.o CMakeFiles/large_state_speed.dir/src/LieGroup.cpp.o CMakeFiles/large_state_speed.dir/src/NoiseParams.cpp.o CMakeFiles/large_state_speed.dir/src/Observations.cpp.o CMakeFiles/large_state_speed.dir/src/RobotState.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
   FLAGS = -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g
   LINK_FLAGS = -rdynamic
   LINK_LIBRARIES = -Wl,-rpath,/home/syr/github/EKF/invariant-ekf/usr/lib/x86_64-linux-gnu  /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
@@ -517,14 +477,6 @@ build CMakeFiles/left_vs_right_error_dynamics.dir/src/RobotState.cpp.o: CXX_COMP
   OBJECT_DIR = CMakeFiles/left_vs_right_error_dynamics.dir
   OBJECT_FILE_DIR = CMakeFiles/left_vs_right_error_dynamics.dir/src
 
-build CMakeFiles/left_vs_right_error_dynamics.dir/src/mahony_filter.cpp.o: CXX_COMPILER__left_vs_right_error_dynamics_Debug /home/syr/github/EKF/invariant-ekf/src/mahony_filter.cpp || cmake_object_order_depends_target_left_vs_right_error_dynamics
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
-  DEP_FILE = CMakeFiles/left_vs_right_error_dynamics.dir/src/mahony_filter.cpp.o.d
-  FLAGS = -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g -fdiagnostics-color=always
-  INCLUDES = -I/home/syr/github/EKF/invariant-ekf/include -I/usr/include/eigen3
-  OBJECT_DIR = CMakeFiles/left_vs_right_error_dynamics.dir
-  OBJECT_FILE_DIR = CMakeFiles/left_vs_right_error_dynamics.dir/src
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target left_vs_right_error_dynamics
@@ -533,7 +485,7 @@ build CMakeFiles/left_vs_right_error_dynamics.dir/src/mahony_filter.cpp.o: CXX_C
 #############################################
 # Link the executable /home/syr/github/EKF/invariant-ekf/bin/left_vs_right_error_dynamics
 
-build /home/syr/github/EKF/invariant-ekf/bin/left_vs_right_error_dynamics: CXX_EXECUTABLE_LINKER__left_vs_right_error_dynamics_Debug CMakeFiles/left_vs_right_error_dynamics.dir/src/tests/left_vs_right_error_dynamics.cpp.o CMakeFiles/left_vs_right_error_dynamics.dir/src/InEKF.cpp.o CMakeFiles/left_vs_right_error_dynamics.dir/src/LieGroup.cpp.o CMakeFiles/left_vs_right_error_dynamics.dir/src/NoiseParams.cpp.o CMakeFiles/left_vs_right_error_dynamics.dir/src/Observations.cpp.o CMakeFiles/left_vs_right_error_dynamics.dir/src/RobotState.cpp.o CMakeFiles/left_vs_right_error_dynamics.dir/src/mahony_filter.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
+build /home/syr/github/EKF/invariant-ekf/bin/left_vs_right_error_dynamics: CXX_EXECUTABLE_LINKER__left_vs_right_error_dynamics_Debug CMakeFiles/left_vs_right_error_dynamics.dir/src/tests/left_vs_right_error_dynamics.cpp.o CMakeFiles/left_vs_right_error_dynamics.dir/src/InEKF.cpp.o CMakeFiles/left_vs_right_error_dynamics.dir/src/LieGroup.cpp.o CMakeFiles/left_vs_right_error_dynamics.dir/src/NoiseParams.cpp.o CMakeFiles/left_vs_right_error_dynamics.dir/src/Observations.cpp.o CMakeFiles/left_vs_right_error_dynamics.dir/src/RobotState.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
   FLAGS = -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g
   LINK_FLAGS = -rdynamic
   LINK_LIBRARIES = -Wl,-rpath,/home/syr/github/EKF/invariant-ekf/usr/lib/x86_64-linux-gnu  /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
@@ -543,42 +495,6 @@ build /home/syr/github/EKF/invariant-ekf/bin/left_vs_right_error_dynamics: CXX_E
   PRE_LINK = :
   TARGET_FILE = /home/syr/github/EKF/invariant-ekf/bin/left_vs_right_error_dynamics
   TARGET_PDB = left_vs_right_error_dynamics.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target mahony_filter
-
-
-#############################################
-# Order-only phony target for mahony_filter
-
-build cmake_object_order_depends_target_mahony_filter: phony || CMakeFiles/mahony_filter.dir
-
-build CMakeFiles/mahony_filter.dir/src/mahony_filter.cpp.o: CXX_COMPILER__mahony_filter_Debug /home/syr/github/EKF/invariant-ekf/src/mahony_filter.cpp || cmake_object_order_depends_target_mahony_filter
-  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_SYSTEM_DYN_LINK
-  DEP_FILE = CMakeFiles/mahony_filter.dir/src/mahony_filter.cpp.o.d
-  FLAGS = -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g -fdiagnostics-color=always
-  INCLUDES = -I/home/syr/github/EKF/invariant-ekf/include -I/usr/include/eigen3
-  OBJECT_DIR = CMakeFiles/mahony_filter.dir
-  OBJECT_FILE_DIR = CMakeFiles/mahony_filter.dir/src
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target mahony_filter
-
-
-#############################################
-# Link the executable /home/syr/github/EKF/invariant-ekf/bin/mahony_filter
-
-build /home/syr/github/EKF/invariant-ekf/bin/mahony_filter: CXX_EXECUTABLE_LINKER__mahony_filter_Debug CMakeFiles/mahony_filter.dir/src/mahony_filter.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
-  FLAGS = -std=c++11 -O3 -DEIGEN_NO_DEBUG -march=native -Wl,--no-as-needed -g
-  LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -Wl,-rpath,/home/syr/github/EKF/invariant-ekf/usr/lib/x86_64-linux-gnu  /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
-  LINK_PATH = -L/home/syr/github/EKF/invariant-ekf/usr/lib/x86_64-linux-gnu
-  OBJECT_DIR = CMakeFiles/mahony_filter.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = /home/syr/github/EKF/invariant-ekf/bin/mahony_filter
-  TARGET_PDB = mahony_filter.dbg
 
 # =============================================================================
 # Object build statements for SHARED_LIBRARY target inekf
@@ -688,8 +604,6 @@ build left_vs_right_error_dynamics: phony /home/syr/github/EKF/invariant-ekf/bin
 
 build libinekf.so: phony /home/syr/github/EKF/invariant-ekf/lib/libinekf.so
 
-build mahony_filter: phony /home/syr/github/EKF/invariant-ekf/bin/mahony_filter
-
 build propagation_speed: phony /home/syr/github/EKF/invariant-ekf/bin/propagation_speed
 
 # =============================================================================
@@ -700,7 +614,7 @@ build propagation_speed: phony /home/syr/github/EKF/invariant-ekf/bin/propagatio
 #############################################
 # Folder: /home/syr/github/EKF/invariant-ekf/cmake-build-debug
 
-build all: phony /home/syr/github/EKF/invariant-ekf/bin/landmarks /home/syr/github/EKF/invariant-ekf/bin/kinematics /home/syr/github/EKF/invariant-ekf/bin/propagation_speed /home/syr/github/EKF/invariant-ekf/bin/correction_speed /home/syr/github/EKF/invariant-ekf/bin/large_state_speed /home/syr/github/EKF/invariant-ekf/bin/left_vs_right_error_dynamics /home/syr/github/EKF/invariant-ekf/bin/mahony_filter /home/syr/github/EKF/invariant-ekf/lib/libinekf.so
+build all: phony /home/syr/github/EKF/invariant-ekf/bin/landmarks /home/syr/github/EKF/invariant-ekf/bin/kinematics /home/syr/github/EKF/invariant-ekf/bin/propagation_speed /home/syr/github/EKF/invariant-ekf/bin/correction_speed /home/syr/github/EKF/invariant-ekf/bin/large_state_speed /home/syr/github/EKF/invariant-ekf/bin/left_vs_right_error_dynamics /home/syr/github/EKF/invariant-ekf/lib/libinekf.so
 
 # =============================================================================
 # Unknown Build Time Dependencies.

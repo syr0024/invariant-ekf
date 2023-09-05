@@ -42,9 +42,10 @@ int main() {
     // Initialize state mean
     Eigen::Matrix3d R0;
     Eigen::Vector3d v0, p0, bg0, ba0;
-    R0 << 1, 0, 0, // initial orientation
-          0, 1, 0, // IMU frame is rotated 90deg about the x-axis
-          0, 0, 1;
+    Eigen::MatrixXd P0;
+    R0 << 0.92925316,-0.3488418, -0.12164674,
+          0.36898163, 0.85987735, 0.3527939,
+          -0.018467978, -0.37272027, 0.92775995;
     v0 << 0,0,0; // initial velocity
     p0 << 0,0,0; // initial position
     bg0 << 0,0,0; // initial gyroscope bias
@@ -54,6 +55,11 @@ int main() {
     initial_state.setPosition(p0);
     initial_state.setGyroscopeBias(bg0);
     initial_state.setAccelerometerBias(ba0);
+
+    // Initialize P prior
+    int dimP = initial_state.dimP();
+    P0 = 4.e-6*Eigen::MatrixXd::Identity(dimP, dimP);
+    initial_state.setP(P0);
 
     // Initialize state covariance
     NoiseParams noise_params;
@@ -71,8 +77,7 @@ int main() {
     cout << filter.getState() << endl;
 
     // Open data file
-    ifstream infile("../src/data/raisim_test_data.txt"); //imu_kinematic_measurements
-    ifstream truefile("../src/data/raisim_true_test_data.txt");
+    ifstream infile("../src/data/raisim_test_data_contactimpulse05.txt"); //imu_kinematic_measurements
     string line;
     Eigen::Matrix<double,6,1> imu_measurement = Eigen::Matrix<double,6,1>::Zero();
     Eigen::Matrix<double,6,1> imu_measurement_prev = Eigen::Matrix<double,6,1>::Zero();
@@ -85,18 +90,21 @@ int main() {
     double p_x = 0;
     double u_vx = 0;
 
+    // Write data file
+    std::ofstream ofile("../src/data/output_data/contactInEKF_est_data.txt");
+
     // int NUM_LINES = 638;
     // int count = 0;
 
     // GNU Plot
-    FILE *gnuplotPipe1 = popen("gnuplot -persistent", "w");
-    FILE *gnuplotPipe2 = popen("gnuplot -persistent", "w");
-    FILE *gnuplotPipe3 = popen("gnuplot -persistent", "w");
-
-    if (!gnuplotPipe1) {
-        std::cerr << "Gnuplot could not be opened." << std::endl;
-        return -1;
-    }
+//    FILE *gnuplotPipe1 = popen("gnuplot -persistent", "w");
+//    FILE *gnuplotPipe2 = popen("gnuplot -persistent", "w");
+//    FILE *gnuplotPipe3 = popen("gnuplot -persistent", "w");
+//
+//    if (!gnuplotPipe1) {
+//        std::cerr << "Gnuplot could not be opened." << std::endl;
+//        return -1;
+//    }
 
     // ---- Loop through data file and read in measurements line by line ---- //
     while (getline(infile, line)){
@@ -131,13 +139,13 @@ int main() {
             vector<pair<int,bool> > contacts;
             int id;
             bool indicator;
-            // t = stod98(measurement[1]); 
+            // t = stod98(measurement[1]);
             // Read in contact data
             for (int i=2; i<measurement.size(); i+=2) {
                 id = stoi98(measurement[i]);
                 indicator = bool(stod98(measurement[i+1]));
                 contacts.push_back(pair<int,bool> (id, indicator));
-            }       
+            }
             // Set filter's contact state
             filter.setContacts(contacts);
         }
@@ -154,7 +162,7 @@ int main() {
             // std::cout << "Kinematic size... " << measurement.size() - 2 << std::endl; // 88
             // Read in kinematic data
             for (int i=2; i<measurement.size(); i+=44) {
-                id = stoi98(measurement[i]); 
+                id = stoi98(measurement[i]);
                 q = Eigen::Quaternion<double> (stod98(measurement[i+1]),stod98(measurement[i+2]),stod98(measurement[i+3]),stod98(measurement[i+4]));
                 q.normalize();
                 p << stod98(measurement[i+5]),stod98(measurement[i+6]),stod98(measurement[i+7]);
@@ -162,9 +170,12 @@ int main() {
                 pose.block<3,1>(0,3) = p;
                 for (int j=0; j<6; ++j) {
                     for (int k=0; k<6; ++k) {
-                        covariance(j,k) = stod98(measurement[i+8 + j*6+k]); //이게 뭐지?
+                        covariance(j,k) = stod98(measurement[i+8 + j*6+k]);
                     }
                 }
+                covariance(3,3)=0.164;
+                covariance(4,4)=0.076;
+                covariance(5,5)=0.005;
                 Kinematics frame(id, pose, covariance);
                 measured_kinematics.push_back(frame);
             }
@@ -174,11 +185,11 @@ int main() {
         else if (measurement[0].compare("TRUE_X")==0){
             assert((measurement.size()-1)%25 == 0);
 
-            // Plotting x
-            v_x = abs(stod98(measurement[3])); //filter.getState().getVelocity()[0]
-            p_x = filter.getState().getPosition()[0];
-            Eigen::MatrixXd P = filter.getState().getP();
-            u_vx = P(0,0);
+//            // Plotting x
+//            v_x = abs(stod98(measurement[3])); //filter.getState().getVelocity()[0]
+//            p_x = filter.getState().getPosition()[0];
+//            Eigen::MatrixXd P = filter.getState().getP();
+//            u_vx = P(0,0);
 //            // Plotting y
 //            v_x = abs(stod98(measurement[3+5])); //filter.getState().getVelocity()[1]
 //            p_x = filter.getState().getPosition()[1];
@@ -192,20 +203,51 @@ int main() {
 
             // 첫 번째 그래프 그리기 (v_x)
 //            fprintf(gnuplotPipe1, "set yrange [0:10]\n");
-            fprintf(gnuplotPipe1, "set grid\n");
-            fprintf(gnuplotPipe1, "plot '-' using 1:2 with lines title 'a_x'linecolor rgb 'blue'\n");
-            fprintf(gnuplotPipe1, "%lf %lf\n", t, abs(v_x - v_x_prev)/dt);
+//            fprintf(gnuplotPipe1, "set grid\n");
+//            fprintf(gnuplotPipe1, "plot '-' using 1:2 with lines title 'a_x'linecolor rgb 'blue'\n");
+//            fprintf(gnuplotPipe1, "%lf %lf\n", t, abs(v_x - v_x_prev)/dt);
+//
+//            // 두 번째 그래프 그리기 (p_x)
+//            fprintf(gnuplotPipe2, "set grid\n");
+//            fprintf(gnuplotPipe2, "plot '-' using 1:2 with lines title 'p_x'\n");
+//            fprintf(gnuplotPipe2, "%lf %lf\n", t, p_x);
+//
+//            // 세 번째 그래프 그리기 (u_vx)
+//            fprintf(gnuplotPipe3, "set grid\n");
+//            fprintf(gnuplotPipe3, "set yrange [0:0.1]\n");
+//            fprintf(gnuplotPipe3, "plot '-' using 1:2 with lines title 'u_vx'\n");
+//            fprintf(gnuplotPipe3, "%lf %lf\n", t, u_vx);
 
-            // 두 번째 그래프 그리기 (p_x)
-            fprintf(gnuplotPipe2, "set grid\n");
-            fprintf(gnuplotPipe2, "plot '-' using 1:2 with lines title 'p_x'\n");
-            fprintf(gnuplotPipe2, "%lf %lf\n", t, p_x);
+            // write contact InEKF result at txt file
+            if(ofile.is_open()){
+                Eigen::MatrixXd pred_rotation(3,3);
+                pred_rotation = filter.getState().getRotation();
+                Eigen::VectorXd Rotation_flat = Eigen::Map<Eigen::VectorXd>(pred_rotation.transpose().data(), pred_rotation.size());
 
-            // 세 번째 그래프 그리기 (u_vx)
-            fprintf(gnuplotPipe3, "set grid\n");
-            fprintf(gnuplotPipe3, "set yrange [0:0.1]\n");
-            fprintf(gnuplotPipe3, "plot '-' using 1:2 with lines title 'u_vx'\n");
-            fprintf(gnuplotPipe3, "%lf %lf\n", t, u_vx);
+
+                ofile << "True_Rotation ";
+                ofile << t << " ";
+                for (int i = 1; i < 2+5+5; i+=5) {
+                    ofile << measurement[i] << " ";
+                    ofile << measurement[i+1] << " ";
+                    ofile << measurement[i+2] << " ";
+                }
+                ofile << "\n";
+
+                ofile << "Pred_Rotation ";
+                ofile << t << " ";
+                for (int i = 0; i < pred_rotation.size(); ++i) {
+                    ofile << Rotation_flat[i] << " ";
+                }
+                ofile << "\n";
+
+                Eigen::MatrixXd P = filter.getState().getP();
+                ofile << "Uncertainty ";
+                ofile << t << " ";
+                ofile << P(0,0) << " ";
+                ofile << P(1,1) << " ";
+                ofile << P(2,2) << "\n";
+            }
         }
 
         // count++;
@@ -229,14 +271,14 @@ int main() {
     cout << filter.getState() << endl;
     cout << "Covariance: \n" << filter.getState().getP() << endl;
 
-    fprintf(gnuplotPipe1, "e\n"); // 데이터 입력 종료
-    fflush(gnuplotPipe1); // 버퍼 비우기
-    pclose(gnuplotPipe1); // 파이프 닫기
-    fprintf(gnuplotPipe2, "e\n"); // 데이터 입력 종료
-    fflush(gnuplotPipe2); // 버퍼 비우기
-    pclose(gnuplotPipe2); // 파이프 닫기
-    fprintf(gnuplotPipe3, "e\n"); // 데이터 입력 종료
-    fflush(gnuplotPipe3); // 버퍼 비우기
-    pclose(gnuplotPipe3); // 파이프 닫기
+//    fprintf(gnuplotPipe1, "e\n"); // 데이터 입력 종료
+//    fflush(gnuplotPipe1); // 버퍼 비우기
+//    pclose(gnuplotPipe1); // 파이프 닫기
+//    fprintf(gnuplotPipe2, "e\n"); // 데이터 입력 종료
+//    fflush(gnuplotPipe2); // 버퍼 비우기
+//    pclose(gnuplotPipe2); // 파이프 닫기
+//    fprintf(gnuplotPipe3, "e\n"); // 데이터 입력 종료
+//    fflush(gnuplotPipe3); // 버퍼 비우기
+//    pclose(gnuplotPipe3); // 파이프 닫기
     return 0;
 }
